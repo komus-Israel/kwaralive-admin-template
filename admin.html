@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>admin page</title>
+    <style media="screen">
+      body{
+        background-color: #8AACD0;
+      }
+      .navbar{
+        box-shadow:10px 10px 10px #829399;
+      }
+      .sidebar{
+        width: 250px;
+        height: 1000px;
+        background-color: white;
+        float: left;
+        box-shadow:10px 10px 10px #829399;
+      }
+      .floaters{
+        height: 100px;
+        width: 240px;
+        float: left;
+        background-color: white;
+        border-radius: 50px;
+        margin-right: 50px;
+        box-shadow:10px 10px 10px #829399;
+      }
+      .container-sm{
+        height: 200px;
+        width: 1200px;
+        background-color: transparent;
+        position: relative;
+        left: 300px;
+        top: 50px;
+      }
+      .body{
+        height:450px;
+        width: 1200px;
+        background-color: transparent;
+        position: relative;
+        left: 300px;
+        top: 50px;
+      }
+      .content1{
+        width: 700px;
+        height: 400px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow:10px 10px 10px #829399;
+      }
+      .content2{
+        width: 400px;
+        height: 195px;
+        background-color: white;
+        float: right;
+        position: relative;
+        bottom: 400px;
+        right: 50px;
+        border-radius: 10px;
+        box-shadow:10px 10px 10px #829399;
+      }
+      .content3{
+        width: 400px;
+        height: 195px;
+        background-color: white;
+        float: right;
+        position: relative;
+        bottom: 195px;
+        left: 350px;
+        border-radius: 10px;
+        box-shadow:10px 10px 10px #829399;
+      }
+      .profile{
+        height: 70px;
+        width: 70px;
+        background-color: transparent;
+        border: 5px solid #829399;
+        border-radius: 45px;
+        float: right;
+        transition: transform .2s;
+      }
+      .profile img{
+        border-radius: 30px;
+      }
+      .profile:hover {
+        transform: scale(1.2);
+      }
+      svg{
+        transition: transform .2s;
+        text-decoration: none;
+        color: #829399;
+      }
+      svg:hover{
+          transform: scale(1.2);
+      }
+      .container-fluid ul{
+        display: inline-flex;
+        padding: 20px;
+      }
+      .container-fluid li{
+        padding: 20px;
+        list-style-type: none;
+        list-style-position: outside;
+      }
+      .list-group a{
+        padding-top: 30px;
+      }
+      .list-group a:hover{
+        background-color: #829399;
+        color: white;
+        text-decoration: underline;
+      }
+      .list-group a svg:hover{
+        color:white;
+      }
+      .round{
+        position: relative;
+        bottom: 940px;
+      }
+      span{
+        color: #72B3E9;
+      }
+      .progress{
+        position: relative;
+        bottom: 110px;
+        float: right;
+        width: 180px;
+        height: 140px
+      }
+      .clear{
+        width: 100%;
+        height: 60px;
+        background-color: transparent;
+      }
+      .comment-box{
+        width: 700px;
+        height: 400px;
+        background-color: white;
+        float: right;
+        position: relative;
+        bottom: 80px;
+        right: 65px;
+        border-radius: 10px;
+        box-shadow:10px 10px 10px #829399;
+      }
+      #comments{
+        width:100%;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: black; height: 100px;">
+  <div class="container-fluid">
+    <a class="navbar-brand"><img src="logo.png" class="rounded mx-auto d-block" alt="" width="200px;"></a>
+    <ul>
+      <li><form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
+      </form></li>
+    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+    <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+    <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+  </svg></a></li>
+  <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z"/>
+  </svg></a></li>
+    <a href="#"><div class="profile"><img src="profile.png" alt="" width="60px"> </div></a>
+    </div>
+    </ul>
+</nav>
+<div class="sidebar">
+  <div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action list-group-flush"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+</svg> Dashboard</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-flush"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pie-chart" viewBox="0 0 16 16">
+  <path d="M7.5 1.018a7 7 0 0 0-4.79 11.566L7.5 7.793V1.018zm1 0V7.5h6.482A7.001 7.001 0 0 0 8.5 1.018zM14.982 8.5H8.207l-4.79 4.79A7 7 0 0 0 14.982 8.5zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+</svg> Analytics</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-flush"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-ui-checks" viewBox="0 0 16 16">
+  <path d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zM2 1a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm0 8a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2H2zm.854-3.646a.5.5 0 0 1-.708 0l-1-1a.5.5 0 1 1 .708-.708l.646.647 1.646-1.647a.5.5 0 1 1 .708.708l-2 2zm0 8a.5.5 0 0 1-.708 0l-1-1a.5.5 0 0 1 .708-.708l.646.647 1.646-1.647a.5.5 0 0 1 .708.708l-2 2zM7 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zm0-5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+</svg> Status of businesses</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-flush"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
+  <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
+</svg> Manage wallet</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-flush"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+  <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+</svg> Verify and Unverify</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-flush"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-check" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+</svg> Sponsored and Unsponsored businesses</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-flush"></a>
+</div>
+
+</div>
+
+<div class="body">
+<div class="content1"><h5>Transactions</h5><hr> <p><img src="download.png" class="round" alt="" width="600px;"></p></div>
+<div class="content2"><h5>App usage</h5><hr><p><img src="chart.png" alt="" width="400px" height="100px"> </p> </div>
+<div class="content3"><h5>Tasks completed</h5><hr><h3>   416 <span>&#11044</span></h3><hr><p>tasks completed this month</p> <img src="progress.png" alt="" class="progress"> </div>
+</div>
+<div class="clear"></div>
+<div class="comment-box">
+  <form action="" method="post">
+  <div>
+  <textarea name="comments" id="comments" placeholder="Notifications" style="font-family:sans-serif;font-size:1.2em;">
+  </textarea>
+  </div>
+  <input type="submit" value="Send notification">
+  </form>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </body>
+</html>
